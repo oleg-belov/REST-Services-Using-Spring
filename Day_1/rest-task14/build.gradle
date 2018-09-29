@@ -1,0 +1,12 @@
+dependencies {
+    compile 'com.jayway.jsonpath:json-path:2.4.0'
+    compile 'org.springframework.boot:spring-boot-devtools'
+    
+    testCompile 'org.junit.jupiter:junit-jupiter-api'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

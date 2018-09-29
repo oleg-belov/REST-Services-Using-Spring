@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -45,8 +46,7 @@ public class BookController {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE
 	})
-	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Book> save(@PathVariable("id") Integer id, @RequestBody Book newBook) {
+	public ResponseEntity<Book> update(@PathVariable("id") Integer id, @RequestBody Book newBook) {
 		Book book = bookRepository.findById(id);
 
 		if (book == null) {
@@ -68,7 +68,7 @@ public class BookController {
 			MediaType.APPLICATION_XML_VALUE
 	})
 	@ResponseStatus(HttpStatus.CREATED)
-	public void update(@RequestBody Book book) {
+	public void save(@Valid @RequestBody Book book) {
 		bookRepository.save(book);
 	}
 

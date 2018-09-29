@@ -2,22 +2,29 @@ package it.discovery.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.time.LocalDate;
 
 @XmlRootElement
 @XmlAccessorType(value = XmlAccessType.FIELD)
 public class Book {
 	private int id;
 
+	@NotBlank
 	private String author;
 
+	@NotBlank
 	@JsonProperty("title")
 	@XmlElement(name = "title")
 	private String name;
 
+	@Min(value = 1900)
 	private int year;
 
 	public int getId() {

@@ -1,5 +1,7 @@
 package it.discovery.controller;
 
+import it.discovery.exception.BadIdException;
+import it.discovery.exception.BookNotFoundException;
 import it.discovery.model.Book;
 import it.discovery.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +25,14 @@ public class BookController {
 			MediaType.APPLICATION_XML_VALUE
 	})
 	public ResponseEntity<Book> getById(@PathVariable("id") Integer id) {
-		Book book = bookRepository.findById(id);
+		if (id <= 0) {
+			throw new BadIdException(String.format("Book id {%d} must be greater than 0", id));
+		}
+
+		final Book book = bookRepository.findById(id);
 
 		if (book == null) {
-			new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+			throw new BookNotFoundException(String.format("Book with id {%d} is not found", id));
 		}
 
 		return new ResponseEntity<>(book, HttpStatus.OK);
@@ -50,7 +56,7 @@ public class BookController {
 		Book book = bookRepository.findById(id);
 
 		if (book == null) {
-			new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+			throw new BookNotFoundException(String.format("Book with id %d is not found", id));
 		} else {
 			newBook.setId(id);
 			bookRepository.save(newBook);

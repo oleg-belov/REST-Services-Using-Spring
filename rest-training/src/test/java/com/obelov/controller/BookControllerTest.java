@@ -3,6 +3,9 @@ package com.obelov.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.obelov.RestApplication;
 import com.obelov.model.Book;
+import io.restassured.http.ContentType;
+import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,6 +18,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static io.restassured.module.mockmvc.RestAssuredMockMvc.given;
+import static io.restassured.module.mockmvc.RestAssuredMockMvc.mockMvc;
+import org.springframework.http.HttpStatus;
 
 @SpringJUnitWebConfig(RestApplication.class)
 @AutoConfigureMockMvc
@@ -23,6 +29,11 @@ public class BookControllerTest {
 	private MockMvc mockMvc;
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
+
+	@BeforeEach
+	public void setup() {
+		RestAssuredMockMvc.mockMvc(mockMvc);
+	}
 
 	@Test
 	public void findById_invalidId_bookNotFound() throws Exception {
@@ -46,16 +57,13 @@ public class BookControllerTest {
 
 	@Test
 	public void save_bookAuthorEmpty_returnBadRequest() throws Exception {
-		//Given
 		Book book = new Book();
 		book.setName("Java");
 		book.setYear(2010);
-		//Then
-		ResultActions resultActions = mockMvc.perform(post("/book")
-				.contentType(MediaType.APPLICATION_JSON_UTF8).content(MAPPER.writeValueAsString(book)))
-				.andDo(print());
-		//When
-		resultActions.andExpect(status().isBadRequest());
+
+		given().contentType(ContentType.JSON).body(book)
+				.when().post("/book")
+				.then().statusCode(HttpStatus.BAD_REQUEST.value());
 	}
 
 }

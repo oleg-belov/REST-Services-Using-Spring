@@ -1,6 +1,7 @@
 package com.obelov.controller;
 
 import com.obelov.exception.BadIdException;
+import com.obelov.hypermedia.BookResource;
 import com.obelov.model.Book;
 import com.obelov.pagination.Page;
 import com.obelov.pagination.PageCriteria;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/book")
@@ -31,7 +33,7 @@ public class BookController {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE
 	})
-	public ResponseEntity<Book> getById(@PathVariable("id") Integer id) {
+	public BookResource getById(@PathVariable("id") Integer id) {
 		if (id <= 0) {
 			throw new BadIdException(String.format("Book id {%d} must be greater than 0", id));
 		}
@@ -42,19 +44,19 @@ public class BookController {
 			throw new BookNotFoundException(String.format("Book with id {%d} is not found", id));
 		}
 
-		return new ResponseEntity<>(book, HttpStatus.OK);
+		return new BookResource(book);
 	}
 
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed(value = "book.getAll")
-	public ResponseEntity<List<Book>> getAll(
+	public ResponseEntity<List<BookResource>> getAll(
 			@RequestParam(required = false, defaultValue = "0") int page,
 			@RequestParam(required = false, defaultValue = "0") int size
 	) {
 		Page pageResponse = bookRepository.searchBooks(new PageCriteria(page, size));
 
 		return ResponseEntity.ok().header("X-TOTAL-COUNT", String.valueOf(pageResponse.getTotalCount()))
-				.body(pageResponse.getBooks());
+				.body(pageResponse.getBooks().stream().map(BookResource::new).collect(Collectors.toList()));
 	}
 
 	@PutMapping(value = "/{id}", consumes = {

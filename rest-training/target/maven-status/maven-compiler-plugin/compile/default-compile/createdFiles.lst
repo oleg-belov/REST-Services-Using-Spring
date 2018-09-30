@@ -1,0 +1,16 @@
+com\obelov\controller\BookController.class
+com\obelov\model\Book.class
+com\obelov\exception\BadIdException.class
+com\obelov\metric\CounterMetric.class
+com\obelov\health\LibraryHealthIndicator.class
+com\obelov\conf\RestExceptionHandler$ErrorInfo.class
+com\obelov\repository\SimpleBookRepository.class
+com\obelov\conf\RestExceptionHandler.class
+com\obelov\client\BookRestClient$1.class
+com\obelov\pagination\PageCriteria.class
+com\obelov\repository\BookRepository.class
+com\obelov\client\BookRestClient$2.class
+com\obelov\exception\BookNotFoundException.class
+com\obelov\client\BookRestClient.class
+com\obelov\RestApplication.class
+com\obelov\pagination\Page.class

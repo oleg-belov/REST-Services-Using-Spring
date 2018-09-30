@@ -1,0 +1,13 @@
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\repository\BookRepository.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\client\BookRestClient.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\exception\BadIdException.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\pagination\PageCriteria.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\RestApplication.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\repository\SimpleBookRepository.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\health\LibraryHealthIndicator.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\conf\RestExceptionHandler.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\pagination\Page.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\exception\BookNotFoundException.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\metric\CounterMetric.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\model\Book.java
+C:\Users\obelov\Documents\REST-Services-Using-Spring\rest-training\src\main\java\com\obelov\controller\BookController.java

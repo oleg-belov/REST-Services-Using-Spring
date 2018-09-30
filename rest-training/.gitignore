@@ -1,5 +1,5 @@
 .settings
-target
+target/
 build
 bin
 # Generated files & directories
@@ -16,7 +16,6 @@ bin
 gen/
 log/
 logs/
-target/
 tmp/
 out/
  # Allow specific files
@@ -33,7 +32,6 @@ out/
 *.iml
 *.ipr
 *.iws
-.idea
 .idea_modules
  # OS specific files
 .DS_Store

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import it.discovery.pagination.Page;
+import it.discovery.pagination.PageCriteria;
 import org.springframework.stereotype.Repository;
 
 import it.discovery.model.Book;
@@ -49,4 +51,10 @@ public class SimpleBookRepository implements BookRepository {
 		return true;
 	}
 
+	@Override
+	public Page searchBooks(PageCriteria pageCriteria) {
+		return new Page(books.size(), new ArrayList<>(books.values())
+				.subList(pageCriteria.getPage() * pageCriteria.getSize(),
+						(pageCriteria.getPage() + 1) * pageCriteria.getSize()));
+	}
 }

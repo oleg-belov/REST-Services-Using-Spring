@@ -3,6 +3,8 @@ package it.discovery.controller;
 import it.discovery.exception.BadIdException;
 import it.discovery.exception.BookNotFoundException;
 import it.discovery.model.Book;
+import it.discovery.pagination.Page;
+import it.discovery.pagination.PageCriteria;
 import it.discovery.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,10 +41,11 @@ public class BookController {
 	}
 
 	@GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Book> getAll() {
-		List<Book> books = bookRepository.findAll();
+	public ResponseEntity<List<Book>> getAll(@RequestParam int page, @RequestParam int size) {
+		Page pageResponse = bookRepository.searchBooks(new PageCriteria(page, size));
 
-		return books;
+		return ResponseEntity.ok().header("X-TOTAL-COUNT", String.valueOf(pageResponse.getTotalCount()))
+				.body(pageResponse.getBooks());
 	}
 
 	@PutMapping(value = "/{id}", consumes = {

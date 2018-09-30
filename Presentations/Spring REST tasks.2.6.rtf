@@ -1,0 +1,453 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033\deflangfe1033\deftab708{\fonttbl{\f0\fswiss\fprq2\fcharset204 Calibri;}{\f1\fswiss\fprq2\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;\red5\green99\blue193;}
+{\*\generator Riched20 10.0.17134}{\*\mmathPr\mnaryLim0\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\widctlpar\sa160\sl252\slmult1\qc\b\f0\fs28\lang1049 Practical tasks\par
+\par
+\fs24 Task #1. Reviewing REST services\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Use browser, \b Postman (\b0 Chrome extension\b )\b0  or any other REST client\par
+{\pntext\f0 2.\tab}Open {\fs22{\field{\*\fldinst{HYPERLINK "http://jsonplaceholder.typicode.com/" }}{\fldrslt{\ul\cf1\cf2\ul\fs24 http}}}}{\f0\fs22{\field{\*\fldinst{HYPERLINK "http://jsonplaceholder.typicode.com/" }}{\fldrslt{\ul\cf1\cf2\ul\fs24 ://jsonplaceholder.typicode.com}}}}{\cf0\ulnone\f0\fs22{\field{\*\fldinst{HYPERLINK "http://jsonplaceholder.typicode.com/" }}{\fldrslt{\ul\cf1\cf2\ul\fs24 /}}}}\cf0\ulnone\f0\fs24\par
+{\pntext\f0 3.\tab}Try to send requests with mostly supported \b HTTP\b0  methods (GET, POST, DELETE, PUT)\par
+{\pntext\f0 4.\tab}Pay attention to response \b body\b0  and \b headers\b0\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #2. Spring Boot and IDE support\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1 Create Spring Boot project using \b Intellij Idea (\b0 if you have Ultimate edition\b )\b0 . You should open menu item File->New-> Spring Initializr.\par
+{\pntext\f0 2.\tab}Create Spring Boot project using \b Spring Tool Suite\b0 . You should open menu item File->New->Project-> Spring Starter Project.\par
+{\pntext\f0 3.\tab}Create Spring Boot project using site {{\field{\*\fldinst{HYPERLINK http://start.spring.io }}{\fldrslt{http://start.spring.io\ul0\cf0}}}}\f0\fs24 , download it and open in IDE.\par
+{\pntext\f0 4.\tab}Download and extract Spring Boot CLI \par
+
+\pard\widctlpar\sa160\sl252\slmult1 {{\field{\*\fldinst{HYPERLINK http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.0.RELEASE/spring-boot-cli-2.0.0.RELEASE-bin.zip }}{\fldrslt{http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.0.RELEASE/spring-boot-cli-2.0.0.RELEASE-bin.zip\ul0\cf0}}}}\f0\fs24  \par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1 Run bin/spring executable: \b spring shell\b0  to start interactive shell. Try to create new Spring Boot projects using various parameters: a) \i init -a test,web\i0  b) \i init -a web --build\i0  \i gradle\i0  c) \i init -a web -b 2.0.0.RELEASE\i0\par
+
+\pard\widctlpar\fi-360\li720\sa160\sl252\slmult1 5.\tab Review projects configuration/content\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #3. Spring Boot application\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li1080\sa160\sl252\slmult1 (\b Prerequisites\b0 ) You should install Maven 3.5 (or later) or Gradle (4.6 or later) on your computer.\par
+{\pntext\f0 2.\tab}Import \b rest-training\b0  project into your IDE (you should import it as Maven or Gradle project) and open \b rest-task3\b0  sub-project.\par
+{\pntext\f0 3.\tab}Write \b RestApplication\b0  bootstrap class as Spring Boot execution entry point.\par
+{\pntext\f0 4.\tab}Run \b RestApplication\b0  and make sure you can open {\fs22{\field{\*\fldinst{HYPERLINK "http://localhost:8080/" }}{\fldrslt{\ul\cf1\cf2\ul\fs24 http://localhost:8080}}}}\f0\fs24  page in your browser.\par
+{\pntext\f0 5.\tab}(\b Maven\b0 ) Make executable jar file using command: \i mvn install spring-boot:repackage \i0 and run it as ordinary jar file. \line (\b Gradle\b0 )  Make executable jar file using command: \i gradle bootJar \i0 and launch it as ordinary jar file\par
+{\pntext\f0 6.\tab}Open {{\field{\*\fldinst{HYPERLINK http://localhost:8080 }}{\fldrslt{http://localhost:8080\ul0\cf0}}}}\f0\fs24  page in your browser. In order to view static content you need to copy \b index.html\b0  into \b src\\main\\resources\\META-INF\\resources\\\b0  folder.\par
+{\pntext\f0 7.\tab}(\b Maven\b0 ) Try to run Spring Boot project using \i mvn install spring-boot:run \i0 command\line (\b Gradle\b0 ) Try to run Spring Boot project using \i gradle bootRun\i0  command\par
+{\pntext\f0 8.\tab}Try to run two jar files simultaneously and observe resulting behavior. If application failed to start try to specify another port in the command-line parameters, for example: \b --server.port=7000\b0\par
+{\pntext\f0 9.\tab}Review application logs and Spring configuration\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\qc\b Task #4. First REST service\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Write two \b REST services\b0  that return data in text format (as String). These services should be put into single class marked as \b Spring\b0  controller. Both services do not accept parameters.\par
+{\pntext\f0 2.\tab}First service returns current local \b date\b0\par
+{\pntext\f0 3.\tab}Second service returns current local \b time\b0\par
+{\pntext\f0 4.\tab}Add dev-tools dependency to your \b pom.xml\b0 :\par
+
+\pard{\*\pn\pnlvlcont\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\li720\sa160\sl252\slmult1\i\tab\tab <dependency>\par
+\tab\tab\tab <groupId>org.springframework.boot</groupId>\par
+\tab\tab\tab <artifactId>spring-boot-devtools</artifactId>\par
+\tab\tab\tab <optional>true</optional>\par
+\tab\tab </dependency>\par
+
+\pard 
+{\pntext\f0 5.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li720\sa160\sl252\slmult1\i0 Try to change endpoint when application is running and observe Spring behavior\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1 (\b Intellij Idea\b0 ) In order to make it working you should go to Settings menu (then Build, Execution, Deployment -> Compiler) and check mark \ldblquote Build project automatically\rdblquote . Then press \ldblquote Ctrl\rdblquote  + \ldblquote Shift\rdblquote  + \ldblquote A\rdblquote , type \ldblquote Registry\rdblquote  in the input box, find \ldblquote\i compiler.automake.allow.when.app.running\i0\rdblquote  setting and check it.\par
+\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #5. Response format\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Open \b rest-task5\b0  sub-project.\par
+{\pntext\f0 2.\tab}Open \b BookController\b0  class and write REST \b GET service \b0 that return sample book instance in \b JSON\b0  format\par
+{\pntext\f0 3.\tab}Start your application and check in Postman that service works correctly\par
+{\pntext\f0 4.\tab}Apply \b @ResponseStatus\b0  to the method so that it returns another status code (for example \b HttpStatus.ACCEPTED\b0 ).\par
+{\pntext\f0 5.\tab}Modify service to produces data in \b JSON/XML\b0  format. Use produces attribute of \b @GetMapping\b0  annotation for that. Put \b @XmlRootElement\b0  annotation on the Book class so that you can serialize it in XML format.\par
+{\pntext\f0 6.\tab}Configure request in Postman to receive book in both formats. Use \b Accept\b0  request header for that.\par
+
+\pard\nowidctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #6. JSON mapping\par
+\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1\b0 1.\tab Try to Google and find out how to change the property names in the response output.\par
+2.\tab Firstly, you need to change (rename) the \b JSON \b0 attributes of the book response; for example, \ldblquote name\rdblquote  -> \ldblquote title\rdblquote\par
+3.\tab Secondly, you need to change (rename) the \b XML \b0 tag names of the book response.\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b\par
+Task #7. REST services and CRUD operations\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Add \b BookRepository\b0  reference to \b BookController\b0  and make it autowired\par
+{\pntext\f0 2.\tab}Implement \b CRUD\b0  operations in \b BookController\b0  (save a book, return book by identifier, return all books and delete book). \par
+{\pntext\f0 3.\tab}Use \b BookRepository\b0  and its implementation \b SimpleBookRepository\b0  for data access operations\par
+{\pntext\f0 4.\tab}Skip all error handling and parameters validation\par
+{\pntext\f0 5.\tab}Use Postman to send requests and verify responses.\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #8. Validation API\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1 Add \b Validation API\b0  annotations on the Book class fields.\par
+{\pntext\f0 2.\tab}Invoke POST service to create new book and omit required fields. What is the server response?\par
+{\pntext\f0 3.\tab}Try to override default messages in Validation API annotations.\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #9. Error handling\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li644\sa160\sl252\slmult1\b0 Add common error handling in your controller using three approaches:\par
+
+\pard\widctlpar\fi-360\li1080\sa160\sl252\slmult1 3.1\tab Manual error handling using \b ResponseEntity\b0  object\par
+3.2\tab Use \b @ResponseStatus \b0 annotation with your own exceptions. Try to override default message in exception.\par
+3.3\tab Use \b @ControllerAdvice \b0 annotation with your own exceptions\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1 2.\tab Add checks for invalid or missing input parameters, invalid or inconsistent object state.\par
+3.\tab Compare all the approaches\par
+\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task # 10. REST client\par
+\b0\par
+
+\pard\widctlpar\fi-360\li1080\sa160\sl252\slmult1 1.\tab Create \b BookRestClient\b0  class that will use \b RestTemplate\b0  class and allow launching following REST services \par
+
+\pard\widctlpar\fi-360\li1440\sa160\sl252\slmult1 1.1\tab Find a book\par
+1.2\tab Find all books\par
+1.3\tab Save/update book. Save method should return URL of new object\par
+
+\pard\widctlpar\fi708\sa160\sl252\slmult1 2. Run Spring Boot application and then run BookRestClient (as Java application).\par
+
+\pard\widctlpar\fi-360\li1080\sa160\sl252\slmult1 Verify status codes and returned response. How would you do that for \b delete()\b0  method?\par
+
+\pard 
+{\pntext\f0 3.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart3\pndec{\pntxta.}}
+\widctlpar\fi-360\li1440\sa160\sl252\slmult1 Use \b RestTemplateBuilder\b0  to create RestTemplate that adds additional header \ldblquote\i Accept: application/json\i0\rdblquote  for each request. You should use additionalInterceptors() method of RestTemplateBuilder.\par
+{\pntext\f0 4.\tab}(\b Optional\b0 ) Add custom error handler that catches all 4xx server status codes.\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #11. Server-side pagination\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent360\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa160\sl252\slmult1 Update \b findBooks\b0  method in the BookController class so that it accepts pagination parameters and paginated response (data and total count)\par
+{\pntext\f0 2.\tab}Update \b BookRepository/SimpleBookRepository\b0  so that it provides pagination functionality when returning books\par
+{\pntext\f0 3.\tab}Test your REST-service with different input parameters\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #12. Spring Boot Actuator\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li644\sa160\sl252\slmult1\b0 Add \b Spring Boot Actuator\b0  dependency:\par
+
+\pard\widctlpar\li2160\sa160\sl252\slmult1\i <dependency>\par
+
+\pard\widctlpar\li2880\sa160\sl252\slmult1 <groupId>org.springframework.boot</groupId>\par
+<artifactId>spring-boot-starter-actuator</artifactId>\par
+
+\pard\widctlpar\li2160\sa160\sl252\slmult1 </dependency>\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1\i0 2.\tab Run application and check global endpoint \i /actuator \i0 and then \b other endpoints\b0 : /actuator/info, /actuator/metrics, /actuator/beans, /actuator/env, /actuator/loggers, /actuator/health, /actuator/conditions\par
+3.\tab Add new \b HealthIndicator\b0  Spring component that will go down if no books are present in the library.\par
+4.\tab Add new \b InfoContributor\b0  Spring component that returns all the REST services (paths, methods) defined in your application.\par
+5.\tab (\b optional\b0 ) Create \b application.properties\b0  file in \b src/main/resource\b0  folder and put info.*=* lines there. Check that entered information is available at /info endpoint\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #13. Metrics\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li644\sa160\sl252\slmult1\b0 Open URL \i /actuator/metrics\i0  and review existing metrics. Call existing REST-services of your applications and open URL \i /actuator/metrics/http.server.requests\i0   \i\par
+{\pntext\f0 2.\tab}\i0 Add \b @Timed\b0  annotation to some of your REST-services and verify that new metric is created\i\par
+{\pntext\f0 3.\tab}\i0 Create two metrics: number of saved books and number of deleted books using \b MeterRegistry\b0  bean. Call POST/DELETE endpoints in your controller and verify that metric values are updated. \par
+{\pntext\f0 4.\tab}Create new timed metric \b book.save.requests\b0  that will be updated each time new book is created.\par
+{\pntext\f0 5.\tab}Add Micrometer-\b Graphite\b0  dependency to your project:\par
+
+\pard\widctlpar\li644\sa160\sl252\slmult1\i\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.micrometer</groupId>\par
+\tab\tab\tab <artifactId>micrometer-registry-graphite</artifactId>\par
+\tab\tab </dependency>\par
+
+\pard\widctlpar\fi-360\li644\sa160\sl252\slmult1\i0 6.\tab Run \b Graphite\b0  Docker container using command\i : docker run \endash d --name graphite  --restart=always -p 80:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024  -p 8125:8125/udp -p 8126:8126 graphiteapp/graphite-statsd\par
+
+\pard\widctlpar\li284\sa160\sl252\slmult1\i0 7.\tab Run your application and open Graphite Dashboard URL: {{\field{\*\fldinst{HYPERLINK http://localhost }}{\fldrslt{http://localhost\ul0\cf0}}}}\f0\fs24  . Review diagrams for JVM metrics.\par
+8.\tab Run \b Grafana\b0  Docker container: \i docker run -d --name=grafana -p 3000:3000 grafana/grafana\i0\par
+9.\tab Open URL {{\field{\*\fldinst{HYPERLINK http://localhost:3000 }}{\fldrslt{http://localhost:3000\ul0\cf0}}}}\f0\fs24  and use admin/admin as login/password. Click Configuration -> Data sources menu item and click \ldblquote Add Data Source\rdblquote  button. Select \ldblquote Graphite\rdblquote  as Type in the combo-box and {{\field{\*\fldinst{HYPERLINK http://localhost:80 }}{\fldrslt{http://localhost:80\ul0\cf0}}}}\f0\fs24  as URL. Select \ldblquote Browser\rdblquote  as Access and click \ldblquote Save & Test\rdblquote  button.\par
+10.\tab Click \ldblquote +\rdblquote -> Create -> Dashboard. Then click \ldblquote Panel title\rdblquote  label and choose \ldblquote Edit\rdblquote . Then click \ldblquote Select metric\rdblquote  link on the \ldblquote Metrics\rdblquote  tab at the bottom of the page and select metrics you would like to observe.\par
+
+\pard\widctlpar\li284\sa160\sl252\slmult1  \par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task # 14. Writing integration tests\par
+\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li720\sa160\sl252\slmult1 Copy all the changed files from rest-task5 to \b rest-task14\b0  sub-project and open rest-task14 sub-project.\par
+{\pntext\f0 2.\tab}Review \b BookControllerTest\b0  class. Add integration tests (using \b Junit 5 \b0 API) for your REST service operations (GET, POST, PUT, DELETE)\par
+{\pntext\f0 3.\tab}You can use \b import static\b0  statements to minimize source code:\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\b import static \b0 org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;\par
+\b import static \b0 org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;\par
+
+\pard\widctlpar\fi-141\li567\sa160\sl252\slmult1 4.\tab Verify \b status codes\b0  and returned response in the unit-tests\b\par
+
+\pard\widctlpar\fi-283\li709\sa160\sl252\slmult1\b0 5.\tab Turn on logging for each test request/response and observe output in the console.\b\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task # 15. Rest Assured\par
+\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li720\sa160\sl252\slmult1 Add Rest Assured dependencies to rest-task14 project:\par
+
+\pard\widctlpar\sa160\sl252\slmult1\i\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.rest-assured</groupId>\par
+\tab\tab\tab <artifactId>rest-assured</artifactId>\par
+\tab\tab\tab <scope>test</scope>\par
+\tab\tab </dependency>\par
+\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.rest-assured</groupId>\par
+\tab\tab\tab <artifactId>spring-mock-mvc</artifactId>\par
+\tab\tab\tab <scope>test</scope>\par
+\tab\tab </dependency>\par
+\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.rest-assured</groupId>\par
+\tab\tab\tab <artifactId>json-path</artifactId>\par
+\tab\tab\tab <scope>test</scope>\par
+\tab\tab </dependency>\par
+
+\pard\widctlpar\fi-360\li720\sa160\sl252\slmult1\i0 2.\tab Update \b BookControllerTest\b0  class and rewrite tests using Rest Assured give-then-when syntax.\par
+3.\tab You can use \b import static\b0  statements to minimize source code:\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\b import static\b0  io.restassured.module.mockmvc.RestAssuredMockMvc.*;\par
+
+\pard\widctlpar\fi-141\li567\sa160\sl252\slmult1 4.\tab Verify \b status codes\b0  and returned response in the unit-tests\b\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task # 16. Unit-tests and system tests\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li720\sa160\sl252\slmult1\b0 Add mocking for the repository using \b @MockBean\b0  annotation\par
+{\pntext\f0 2.\tab}You can use import static statements to minimize source code:\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\i import static org.mockito.BDDMockito.*;\par
+
+\pard\widctlpar\fi-360\li720\sa160\sl252\slmult1\i0 3.\tab Provide default behavior for the repository methods.\par
+4.\tab Verify status codes and returned response in the unit-tests\par
+5.\tab Try to use \b @JsonTest\b0  annotation to auto-wire \b JacksonTester\b0  instance.\par
+6.\tab Write a system test that starts entire application and checks any of the REST services.\par
+
+\pard\widctlpar\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #17. Spring HATEOAS\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi-360\li1800\sa160\sl252\slmult1\b0 Add Spring HATEOAS dependency:\par
+
+\pard\widctlpar\li2520\sa160\sl252\slmult1\i <dependency>\par
+
+\pard\widctlpar\li3240\sa160\sl252\slmult1 <groupId>org.springframework.boot</groupId>\par
+<artifactId>spring-boot-starter-hateoas</artifactId>\par
+
+\pard\widctlpar\li2520\sa160\sl252\slmult1 </dependency>\par
+
+\pard\widctlpar\fi-360\li1800\sa160\sl252\slmult1\i0 2.\tab Add boolean flag \b rented\b0  to a Book class \par
+3.\tab Add REST service to \b BookController\b0  class that allows to rent a single book. It should check if book is available (not rented) and update flag rented.\par
+4.\tab Add import static to \b BookController\b0  class: \par
+
+\pard\widctlpar\li1800\sa160\sl252\slmult1\i import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;\par
+
+\pard\widctlpar\fi-360\li1800\sa160\sl252\slmult1\i0 5.\tab Update \b findById\b0  and \b findAll\b0  methods in the controller so that it returns links to get current book and rent a book\par
+6.\tab If book was rented that only view link should be returned to the client. If book was not rented then both links should be returned to the client.\par
+7.\tab Update save operation so that it returns location of new book to the client\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\qc Task #18. Caching\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li1080\sa160\sl252\slmult1 Add \b @EnableCaching\b0  annotation to the \b RestApplication\b0  class.\par
+{\pntext\f0 2.\tab}Add Cache dependency:\par
+
+\pard\widctlpar\li2520\sa160\sl252\slmult1\i <dependency>\par
+
+\pard\widctlpar\li3600\sa160\sl252\slmult1 <groupId>org.springframework.boot</groupId>\par
+<artifactId>spring-boot-starter-cache</artifactId>\par
+
+\pard\widctlpar\li2880\sa160\sl252\slmult1 </dependency>\par
+
+\pard\widctlpar\fi-360\li1080\sa160\sl252\slmult1\i0 3.\tab Add \b @Cacheable\b0  annotation to the \b GET\b0  REST-services. How does it affect its behavior?\par
+4.\tab Add new REST service that would clear the cache and put \b @CacheEvict\b0  annotation on it. Verify its behavior. \par
+5.\tab Re-launch your automation tests. Did caching effect tests?\par
+6.\tab Update \b BookRestClient\b0  and add new method that clears books cache.\par
+7.\tab (\b optional\b0 ) Review \b jcache.xml\b0  configuration file in src/main/resources folder. Add EhCache dependency to pom.xml:\par
+
+\pard\widctlpar\li2160\sa160\sl252\slmult1\i <dependency>\par
+
+\pard\widctlpar\li2880\sa160\sl252\slmult1 <groupId>org.ehcache</groupId>\par
+<artifactId>ehcache</artifactId>\par
+
+\pard\widctlpar\fi336\li1788\sa160\sl252\slmult1 </dependency>\par
+
+\pard\widctlpar\fi-360\li1080\sa160\sl252\slmult1\i0 8.\tab (\b optional\b0 ). Specify \b jcache.xml\b0  file location in application.properties file. Restart the application and verify that caching works properly.\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\par
+
+\pard\widctlpar\sa160\sl252\slmult1\qc\b Task #19. Redis configuration\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard\widctlpar\fi-360\li720\sa160\sl252\slmult1 1.\tab Download and install Redis. If you have Linux/MacOS, you can use this link ({{\field{\*\fldinst{HYPERLINK https://redis.io/download }}{\fldrslt{https://redis.io/download\ul0\cf0}}}}\f0\fs24 ). Please use this link ({{\field{\*\fldinst{HYPERLINK https://github.com/MSOpenTech/redis/releases }}{\fldrslt{https://github.com/MSOpenTech/redis/releases\ul0\cf0}}}}\f0\fs24 ) for Windows users. Windows version is outdated(3.2) so you can start Docker image for the latest (4.0) version:\par
+\i docker run -d -p 6379:6379 redis\par
+\i0 2.\tab Review \b redis.conf\b0  configuration file (or \b redis.windows.conf\b0  on Windows platform).\par
+3.\tab Start Redis command-line using \b redis-cli\b0  command. If this command is not found check, that \b Redis\b0  folder is in \b PATH\b0  environment variable. For example, C:\\Program Files\\Redis\\ on Windows platform.\par
+4.\tab Starts another Redis console using \b redis-cli monitor\b0  command. It should print all the commands entered in any console.\par
+5.\tab Try to print all the configuration settings using \i CONFIG GET *\i0  command (or \i CONFIG GET dir\i0  for single setting).\par
+6.\tab Run \i exists greeting\i0  command to check if key \b greeting\b0  exists. Append new value by using \i APPEND greeting \ldblquote Hello,\rdblquote\i0  command. Add another value using \i APPEND greeting \ldblquote IT Discovery\rdblquote\i0  command. Prints greeting key using \i GET greeting\i0  command.\par
+7.\tab Create another key using \i APPEND text \ldblquote Some text\rdblquote\i0  command. Print all the keys using \i SCAN 0\i0  command.\par
+8.\tab Print all keys using \i KEYS *\i0  command. You can try filtering keys using regular expression, for example, \i KEYS *t*\i0  or \i KEYS tex?\i0  command\par
+9.\tab Run \b redis-cli --stat\b0  command to view active connections to \b Redis\b0  server.\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\qc Task #20. JCache and Redis\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard\widctlpar\sa160\sl252\slmult1\f1\lang1033\tab 1. \f0\lang1049 Add \b JCache\b0  and Spring Data \b Redis\b0  dependencies:\par
+
+\pard\widctlpar\fi-1744\li2880\sa160\sl252\slmult1\i <dependency>\par
+\f1\lang1033\tab\f0\lang1049 <groupId>javax.cache</groupId>\par
+\f1\lang1033\tab\f0\lang1049 <artifactId>cache-api</artifactId>\par
+</dependency>\par
+<dependency>\par
+\f1\lang1033\tab\f0\lang1049 <groupId>org.springframework.boot</groupId>\par
+\tab <artifactId>spring-boot-starter-data-redis</artifactId>\par
+</dependency>\par
+
+\pard\widctlpar\fi-425\li851\sa160\sl252\slmult1\i0 2.\tab Replace \b @Cacheable\b0  with \b @CacheResult\b0  and \b @CacheEvict\b0  with @CacheRemove/ @CacheRemoveAll. Verify that new annotations are processed by Spring. \par
+3.\tab Use \b @CacheDefaults\b0  annotation to provide cache name for the entire controller.\par
+4.\tab Try to test REST services and then check that \b Redis\b0  server contains new cache entries.\par
+
+\pard\widctlpar\fi-283\li709\sa160\sl252\slmult1 5.\tab Run command \i redis-cli info stats\i0  to view cache statistics (cache hits and misses)\par
+
+\pard\widctlpar\fi-425\li851\sa160\sl252\slmult1 6.\tab Change the cache parameters (time to live and entry prefix) and verify that your application uses these parameters.\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b\par
+\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\qc Task #21. Performance testing\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li1440\sa160\sl252\slmult1 Download and install Apache JMeter: {{\field{\*\fldinst{HYPERLINK http://jmeter.apache.org/download_jmeter.cgi }}{\fldrslt{http://jmeter.apache.org/download_jmeter.cgi\ul0\cf0}}}}\f0\fs24  \par
+
+\pard\widctlpar\li1440\sa160\sl252\slmult1 Folder c:\\JMeter or d:\\JMeter is recommended on Windows systems\par
+
+\pard\widctlpar\fi-360\li1440\sa160\sl252\slmult1 2.\tab Run \b jmeter\b0  executable in the \b bin\b0  folder. Review its functionality and interface\par
+3.\tab Click on \b Test Plan\b0  node and add new Thread Group. Specify number of threads (users), ramp-up time (5 seconds is recommended) and loop count (10 or 20 is recommended).\par
+4.\tab Click on \b Thread Group\b0  node and add new Sampler -> HTTP request. Specify name, protocol, host name and port, REST endpoint for GET operation and parameters (if necessary).\par
+5.\tab If you enable security then add new \b Config Element\b0  -> HTTP Header Manager node and specify \lquote Authorization\rquote  header.\par
+6.\tab Add \b Listener\b0  -> Aggregated Report and Listener -> View Results Tree elements.\par
+7.\tab Save your Test Plan as \ldblquote\b Thread Group.jmx\b0\rdblquote  and then click \lquote Start\rquote  button. Observe results in two previous elements. What is the difference between \ldblquote Average\rdblquote , \ldblquote Median\rdblquote  and \ldblquote 90% line\rdblquote  columns in Aggregated Report?\par
+8.\tab Close JMeter and run your tests in command-line mode: jmeter -n -t "Thread Group.jmx" -l res.csv \endash e\par
+9.\tab Verify that \b res.csv\b0  file was created. Then run jmeter, open saved Test Plan, go to Aggregated Report/View Results Tree element and load res.csv,\par
+10.\tab Create HTTP request nodes for each REST service in your application and test them.\b\par
+\b0 11.\tab Enable/disable \b caching\b0  in your application and retest your REST services.\b\par
+\b0 12.\tab Try to increase number of threads parameter so that \ldblquote Errors\rdblquote  column displays non-zero values. What is the maximum number of threads when server produces no errors?\b\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\b0\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\qc\b Task #22. Swagger documentation\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi1134\sa160\sl252\slmult1 Add Springfox dependency into your project:\par
+
+\pard\widctlpar\li1134\sa160\sl252\slmult1\i\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.springfox</groupId>\par
+\tab\tab\tab <artifactId>springfox-swagger2</artifactId>\par
+\tab\tab\tab <version>2.\f1\lang1033 9\f0\lang1049 .\f1\lang1033 2\f0\lang1049 </version>\par
+\tab\tab </dependency>\par
+
+\pard\widctlpar\fi-426\li1560\sa160\sl252\slmult1\i0 2.\tab Create new Java class SwaggerConfiguration and put \b @Configuration/ @EnableSwagger2\b0  annotations on it. Restart your application and verify that URL {{\field{\*\fldinst{HYPERLINK http://localhost:8080/v2/api-docs }}{\fldrslt{http://localhost:8080/v2/api-docs\ul0\cf0}}}}\f0\fs24  contains JSON specification of your project.\par
+3.\tab Added new \b @Bean\b0  method into SwaggerConfiguration class and specify base package and API project information\par
+
+\pard\widctlpar\fi-360\li1440\sa160\sl252\slmult1 4.\tab Add Swagger-core annotations: \b @ApiOperation/@ApiParam/@ApiResponses\b0  on your REST services. Make sure that generated JSON specification reflects your changes.\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+
+\pard\widctlpar\li1080\sa160\sl252\slmult1\qc\b Task #23. Swagger UI\par
+
+\pard\widctlpar\sa160\sl252\slmult1\b0\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\widctlpar\fi1134\sa160\sl252\slmult1 Add Springfox Swagger UI dependency into your project:\par
+
+\pard\widctlpar\li1134\sa160\sl252\slmult1\i\tab\tab <dependency>\par
+\tab\tab\tab <groupId>io.springfox</groupId>\par
+\tab\tab\tab <artifactId>springfox-swagger-ui</artifactId>\par
+\tab\tab\tab <version>2.\f1\lang1033 9\f0\lang1049 .\f1\lang1033 2\f0\lang1049 </version>\par
+\tab\tab </dependency>\par
+
+\pard\widctlpar\fi-426\li1560\sa160\sl252\slmult1\i0 2.\tab Start your application and open URL {{\field{\*\fldinst{HYPERLINK http://localhost:8080/swagger-ui.html }}{\fldrslt{http://localhost:8080/swagger-ui.html\ul0\cf0}}}}\f0\fs24 . Review displayed services and their parameters.\par
+3.\tab Try to call some of your services.\par
+4.\tab How would you change Swagger UI default page?\par
+
+\pard\widctlpar\li720\sa160\sl252\slmult1\par
+\par
+}
+ 

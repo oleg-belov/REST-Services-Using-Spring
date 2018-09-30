@@ -1,7 +1,9 @@
 package it.discovery.controller;
 
+import io.micrometer.core.annotation.Timed;
 import it.discovery.exception.BadIdException;
 import it.discovery.exception.BookNotFoundException;
+import it.discovery.metric.CounterMetric;
 import it.discovery.model.Book;
 import it.discovery.pagination.Page;
 import it.discovery.pagination.PageCriteria;
@@ -22,6 +24,9 @@ public class BookController {
 	@Autowired
 	private BookRepository bookRepository;
 
+	@Autowired
+	private CounterMetric counterMetric;
+
 	@GetMapping(value = "/{id}", produces = {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE
@@ -41,6 +46,7 @@ public class BookController {
 	}
 
 	@GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Timed(value = "book.getAll")
 	public ResponseEntity<List<Book>> getAll(
 			@RequestParam(required = false, defaultValue = "0") int page,
 			@RequestParam(required = false, defaultValue = "0") int size
@@ -82,11 +88,13 @@ public class BookController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void save(@Valid @RequestBody Book book) {
 		bookRepository.save(book);
+		counterMetric.handleCreateBook();
 	}
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable("id") Integer id) {
 		bookRepository.delete(id);
+		counterMetric.handleDeleteBook();
 	}
 }

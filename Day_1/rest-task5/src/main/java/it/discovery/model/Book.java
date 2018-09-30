@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @XmlRootElement
 @XmlAccessorType(value = XmlAccessType.FIELD)
@@ -57,5 +58,31 @@ public class Book {
 
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Book)) return false;
+		Book book = (Book) o;
+		return id == book.id &&
+				year == book.year &&
+				Objects.equals(author, book.author) &&
+				Objects.equals(name, book.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, author, name, year);
+	}
+
+	@Override
+	public String toString() {
+		return "Book{" +
+				"id=" + id +
+				", author='" + author + '\'' +
+				", name='" + name + '\'' +
+				", year=" + year +
+				'}';
 	}
 }

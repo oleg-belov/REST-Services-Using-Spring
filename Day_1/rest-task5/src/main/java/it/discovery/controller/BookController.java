@@ -45,7 +45,7 @@ public class BookController {
 		return books;
 	}
 
-	@PostMapping(value = "/{id}", consumes = {
+	@PutMapping(value = "/{id}", consumes = {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE
 	}, produces = {

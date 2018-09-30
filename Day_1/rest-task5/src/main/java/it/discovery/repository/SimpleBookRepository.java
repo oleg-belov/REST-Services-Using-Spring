@@ -57,4 +57,9 @@ public class SimpleBookRepository implements BookRepository {
 				.subList(pageCriteria.getPage() * pageCriteria.getSize(),
 						(pageCriteria.getPage() + 1) * pageCriteria.getSize()));
 	}
+
+	@Override
+	public boolean isEmpty() {
+		return books.isEmpty();
+	}
 }

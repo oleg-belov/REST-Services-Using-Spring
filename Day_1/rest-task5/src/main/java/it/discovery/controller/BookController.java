@@ -41,7 +41,10 @@ public class BookController {
 	}
 
 	@GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Book>> getAll(@RequestParam int page, @RequestParam int size) {
+	public ResponseEntity<List<Book>> getAll(
+			@RequestParam(required = false, defaultValue = "0") int page,
+			@RequestParam(required = false, defaultValue = "0") int size
+	) {
 		Page pageResponse = bookRepository.searchBooks(new PageCriteria(page, size));
 
 		return ResponseEntity.ok().header("X-TOTAL-COUNT", String.valueOf(pageResponse.getTotalCount()))

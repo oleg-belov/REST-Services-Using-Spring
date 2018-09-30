@@ -16,4 +16,6 @@ public interface BookRepository {
 	boolean delete(int id);
 
 	Page searchBooks(PageCriteria pageCriteria);
+
+	boolean isEmpty();
 }
